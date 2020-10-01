@@ -1,3 +1,7 @@
+# Install Packages
+
+npm install
+
 # Running the App
 
 ng test
