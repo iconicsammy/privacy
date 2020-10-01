@@ -1,0 +1,59 @@
+
+<ng-template #consentContent>
+
+    <div class="consent-close-header">
+        <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">x</span>
+          </button>
+    </div>
+
+    <div class="consent-content">
+        <div class="consent-title">
+            <p>Can we store cookies?</p>
+           
+          </div>
+          <div class="constent-body">
+           <p>We and our partners use technologies, such as cookies and process personal data, such as IP
+           addresses and cookie identifiers, to personalize ads and content based on your interests, measure
+           the performance of ads and content, and dervice insights about the audience who saw ads and content.
+        </p>
+
+        <p>
+            Click below to consent to the user of this technology and the processing of your personal data for these
+            purposes. You can change your mind and change your consent choices at any time by returning to this site.
+        </p>
+
+        <p>
+            You can familiarize with our <a href="#" class="privacy-policy">Privacy Policy</a>
+        </p>
+          </div>
+
+          <div class="consent-footer">
+              <div class="consent-footer-buttons">
+                <button type="button" class="btn btn-primary" (click)="modal.close('Save click')">Accept All</button>
+                <button type="button" class="btn btn-outline-dark save-settings" (click)="modal.close('Save click')">Save All Settings</button>
+              </div>
+
+              <div class="consent-footer-customize">
+                Customize <fa-icon [icon]="caret" (click)="toggleCustomizationBlock()" class="icons"></fa-icon>
+              </div>
+           
+          </div>
+        
+
+    </div>
+
+    <div class="consent-list {{showCustomizeBlock}}">
+       <div class="consentContent">
+        <div class="accordion" id="myAccordion">
+          <app-consent-detail *ngFor="let consent of listOfConsents" [consentDetail]="consent" id={{consent.CategoyHeading}}></app-consent-detail>
+          
+      </div>
+
+        
+       
+       </div>
+    </div>
+
+
+  </ng-template>

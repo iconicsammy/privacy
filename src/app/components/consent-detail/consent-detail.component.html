@@ -1,0 +1,45 @@
+<div class="card">
+  <div class="card-header" id="headingOne">
+    <div class="consent-info">
+        <app-slider title="{{consentDetail.CategoyHeading}}" id={{consentDetail.CategoyId}}></app-slider>
+    </div>
+    <div class="colexp-icon">
+        <fa-icon *ngIf="detailsStatus === 'collapse'" [icon]="downCaret" (click)="setCollapseState('')" class="icons"></fa-icon>
+        <fa-icon *ngIf="detailsStatus !== 'collapse'" [icon]="upCaret" (click)="setCollapseState('collapse')" class="icons"></fa-icon>
+        
+   </div>
+    <hr />
+  </div>
+  <div
+    id="consentDetailsBlock"
+    class="{{detailsStatus}}"
+    aria-labelledby="headingOne"
+    data-parent="#myAccordion"
+  >
+    <div class="card-body">
+      <p>
+       {{consentDetail.CategoyText}}
+      </p>
+
+      <table class="table table-borderless">
+          <thead>
+        <tr>
+              <th>Plugins</th>
+              <th>Enable/Disable</th>
+              <th>&nbsp;</th>
+            </tr>
+          </thead>
+        <tbody>
+            <tr *ngFor="let plugin of consentDetail.PluginList">
+                <td>{{plugin.ComplianceType}}</td>
+                <td><app-slider id={{plugin.ComplianceTypeID}}></app-slider></td>
+                <td>
+                    <a href="{{plugin.optOutExternalLink}}" *ngIf="plugin.optOutExternalLink" target="_blank">Go to site</a>
+
+                </td>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

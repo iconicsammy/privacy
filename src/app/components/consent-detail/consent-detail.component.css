@@ -1,0 +1,30 @@
+.card {
+    margin-bottom: 5px !important;
+}
+.card-header {
+    background-color: #ffffff !important;
+    border-bottom: none !important;
+    padding-bottom: 0px !important;
+}
+.card-header .consent-info {
+    float:left;
+}
+
+.card-header .colexp-icon {
+    float: right;
+}
+
+.card-header hr {
+    color: blue;
+    clear: both;
+    margin-top: 35px;
+}
+
+.card-body {
+    border: none !important;
+    padding-top: 0px !important;
+}
+
+.icons {
+    color: #000000;
+}
